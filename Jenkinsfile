@@ -16,30 +16,30 @@ stage('Cleanup') {
                 sh './mvnw clean'
             }
         }
-        // stage('Check Style, FindBugs, PMD') {
-        //     steps {
-        //         sh './mvnw validate compile'
-        //     }
-        // post {
-        // always {
-        //         step([
-        //         $class         : 'FindBugsPublisher',
-        //         pattern        : 'build/reports/findbugs/*.xml',
-        //         canRunOnFailed : true
-        //         ])
-        //         step([
-        //         $class         : 'PmdPublisher',
-        //         pattern        : 'build/reports/pmd/*.xml',
-        //         canRunOnFailed : true
-        //         ])
-        //         step([
-        //         $class: 'CheckStylePublisher', 
-        //         pattern: 'build/reports/checkstyle/*.xml',
-        //         canRunOnFailed : true
-        //         ])
-        }
-      }
-    }
+    //     stage('Check Style, FindBugs, PMD') {
+    //         steps {
+    //             sh './mvnw validate compile'
+    //         }
+    //     post {
+    //     always {
+    //             step([
+    //             $class         : 'FindBugsPublisher',
+    //             pattern        : 'build/reports/findbugs/*.xml',
+    //             canRunOnFailed : true
+    //             ])
+    //             step([
+    //             $class         : 'PmdPublisher',
+    //             pattern        : 'build/reports/pmd/*.xml',
+    //             canRunOnFailed : true
+    //             ])
+    //             step([
+    //             $class: 'CheckStylePublisher', 
+    //             pattern: 'build/reports/checkstyle/*.xml',
+    //             canRunOnFailed : true
+    //             ])
+    //     }
+    //   }
+    // }
 stage('Test') {
             steps {
                 sh './mvnw test'
