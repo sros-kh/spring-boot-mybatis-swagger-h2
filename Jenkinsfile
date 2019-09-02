@@ -13,12 +13,12 @@ pipeline {
         }
 stage('Cleanup') {
             steps {
-                sh 'mvn clean'
+                sh './mvnw clean'
             }
         }
         stage('Check Style, FindBugs, PMD') {
             steps {
-                sh 'mvn validate compile'
+                sh './mvnw validate compile'
             }
         post {
         always {
@@ -42,7 +42,7 @@ stage('Cleanup') {
     }
 stage('Test') {
             steps {
-                sh 'mvn test'
+                sh './mvnw test'
             }
             post {
                 always {
@@ -52,7 +52,7 @@ stage('Test') {
         }
         stage('Build') {
             steps {
-                sh 'mvn install'
+                sh './mvnw install'
             }
         }
 //         stage('Update Docker UAT image') {
