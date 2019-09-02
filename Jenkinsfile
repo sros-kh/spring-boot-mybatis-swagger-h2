@@ -13,12 +13,12 @@ pipeline {
         }
 stage('Cleanup') {
             steps {
-                sh './mvnw --no-daemon clean'
+                sh 'mvn clean'
             }
         }
         stage('Check Style, FindBugs, PMD') {
             steps {
-                sh './mvnw --no-daemon checkstyleMain checkstyleTest findbugsMain findbugsTest pmdMain pmdTest cpdCheck'
+                sh 'mvn validate compile'
             }
         post {
         always {
@@ -42,7 +42,7 @@ stage('Cleanup') {
     }
 stage('Test') {
             steps {
-                sh './mvnw --no-daemon check'
+                sh 'mvn test'
             }
             post {
                 always {
@@ -52,45 +52,45 @@ stage('Test') {
         }
         stage('Build') {
             steps {
-                sh './mvnw --no-daemon build'
+                sh 'mvn install'
             }
         }
-        stage('Update Docker UAT image') {
-            when { branch "master" }
-            steps {
-                sh '''
-docker login -u "<userid>" -p "<password>"
-                    docker build --no-cache -t person .
-                    docker tag person:latest amritendudockerhub/person:latest
-                    docker push amritendudockerhub/person:latest
-docker rmi person:latest
-                '''
-            }
-        }
-        stage('Update UAT container') {
-            when { branch "master" }
-            steps {
-                sh '''
-docker login -u "<userid>" -p "<password>"
-                    docker pull amritendudockerhub/person:latest
-                    docker stop person
-                    docker rm person
-                    docker run -p 9090:9090 --name person -t -d amritendudockerhub/person
-                    docker rmi -f $(docker images -q --filter dangling=true)
-                '''
-            }
-        }
-        stage('Release Docker image') {
-            when { buildingTag() }
-            steps {
-                sh '''
-docker login -u "<userid>" -p "<password>"
-                    docker build --no-cache -t person .
-                    docker tag person:latest amritendudockerhub/person:${TAG_NAME}
-                    docker push amritendudockerhub/person:${TAG_NAME}
-docker rmi $(docker images -f “dangling=true” -q)
-               '''
-            }
-        }
+//         stage('Update Docker UAT image') {
+//             when { branch "master" }
+//             steps {
+//                 sh '''
+// docker login -u "<userid>" -p "<password>"
+//                     docker build --no-cache -t person .
+//                     docker tag person:latest amritendudockerhub/person:latest
+//                     docker push amritendudockerhub/person:latest
+// docker rmi person:latest
+//                 '''
+//             }
+//         }
+//         stage('Update UAT container') {
+//             when { branch "master" }
+//             steps {
+//                 sh '''
+// docker login -u "<userid>" -p "<password>"
+//                     docker pull amritendudockerhub/person:latest
+//                     docker stop person
+//                     docker rm person
+//                     docker run -p 9090:9090 --name person -t -d amritendudockerhub/person
+//                     docker rmi -f $(docker images -q --filter dangling=true)
+//                 '''
+//             }
+//         }
+//         stage('Release Docker image') {
+//             when { buildingTag() }
+//             steps {
+//                 sh '''
+// docker login -u "<userid>" -p "<password>"
+//                     docker build --no-cache -t person .
+//                     docker tag person:latest amritendudockerhub/person:${TAG_NAME}
+//                     docker push amritendudockerhub/person:${TAG_NAME}
+// docker rmi $(docker images -f “dangling=true” -q)
+//                '''
+//             }
+//         }
     }
 }
