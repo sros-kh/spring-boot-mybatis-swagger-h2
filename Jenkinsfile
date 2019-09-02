@@ -13,12 +13,12 @@ pipeline {
         }
 stage('Cleanup') {
             steps {
-                sh './gradlew --no-daemon clean'
+                sh './mvnw --no-daemon clean'
             }
         }
         stage('Check Style, FindBugs, PMD') {
             steps {
-                sh './gradlew --no-daemon checkstyleMain checkstyleTest findbugsMain findbugsTest pmdMain pmdTest cpdCheck'
+                sh './mvnw --no-daemon checkstyleMain checkstyleTest findbugsMain findbugsTest pmdMain pmdTest cpdCheck'
             }
         post {
         always {
@@ -42,7 +42,7 @@ stage('Cleanup') {
     }
 stage('Test') {
             steps {
-                sh './gradlew --no-daemon check'
+                sh './mvnw --no-daemon check'
             }
             post {
                 always {
@@ -52,7 +52,7 @@ stage('Test') {
         }
         stage('Build') {
             steps {
-                sh './gradlew --no-daemon build'
+                sh './mvnw --no-daemon build'
             }
         }
         stage('Update Docker UAT image') {
