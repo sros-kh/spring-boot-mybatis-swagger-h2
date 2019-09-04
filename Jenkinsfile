@@ -1,22 +1,22 @@
 pipeline {
   agent {
-        docker {
-            image 'maven:3-alpine' 
-            args '-v /root/.m2:/root/.m2' 
-        }
+    docker {
+      image 'maven:3-alpine' 
+      args '-v /root/.m2:/root/.m2' 
+    }
   }
   stages {
-    stage('clean & install') {
+    stage('Build') {
       steps {
-        sh 'mvn clean install'
+        mvn -B -DskipTests clean package
       }
     }
-    stage('test') {
-      steps {
+    stage('Test') {
+     steps {
         sh 'mvn test'
-      }
+     }
     }
-    stage('deploy') {
+    stage('Deliver') {
       steps {
         sh 'mvn spring-boot:run'
       }
