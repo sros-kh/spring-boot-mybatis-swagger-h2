@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Deliver') {
       steps {
-        sh 'mvn spring-boot:run'
+        sh 'docker build -t spring-boot-mybatis-swagger-h2 . && docker run -d -p 1234:1234 --name spring-boot-mybatis-swagger-h2 spring-boot-mybatis-swagger-h2'
       }
     }
   }
