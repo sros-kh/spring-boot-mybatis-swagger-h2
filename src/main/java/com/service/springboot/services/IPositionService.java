@@ -1,6 +1,6 @@
-package com.service.demo.services;
+package com.service.springboot.services;
 
-import com.service.demo.model.Position;
+import com.service.springboot.model.Position;
 
 import java.util.List;
 

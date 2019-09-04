@@ -1,6 +1,6 @@
-package com.service.demo.services;
+package com.service.springboot.services;
 
-import com.service.demo.model.Staff;
+import com.service.springboot.model.Staff;
 
 import java.util.List;
 

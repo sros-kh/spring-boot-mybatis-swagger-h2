@@ -1,8 +1,8 @@
-package com.service.demo.services.impl;
+package com.service.springboot.services.impl;
 
-import com.service.demo.dao.StaffDAO;
-import com.service.demo.model.Staff;
-import com.service.demo.services.IStaffService;
+import com.service.springboot.dao.StaffDAO;
+import com.service.springboot.model.Staff;
+import com.service.springboot.services.IStaffService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

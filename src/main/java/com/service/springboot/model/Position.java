@@ -1,4 +1,4 @@
-package com.service.demo.model;
+package com.service.springboot.model;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.service.demo.config;
+package com.service.springboot.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.service.demo.dao")
+@MapperScan("com.service.springboot.dao")
 public class MyBatisConfig {
 
     private DataSource dataSource;

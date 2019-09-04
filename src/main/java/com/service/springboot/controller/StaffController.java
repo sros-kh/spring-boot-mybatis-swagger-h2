@@ -1,8 +1,8 @@
-package com.service.demo.controller;
+package com.service.springboot.controller;
 
-import com.service.demo.model.Staff;
-import com.service.demo.services.IStaffService;
-import com.service.demo.services.impl.StaffServiceImpl;
+import com.service.springboot.model.Staff;
+import com.service.springboot.services.IStaffService;
+import com.service.springboot.services.impl.StaffServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

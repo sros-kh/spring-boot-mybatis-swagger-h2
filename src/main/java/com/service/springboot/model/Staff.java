@@ -1,4 +1,4 @@
-package com.service.demo.model;
+package com.service.springboot.model;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

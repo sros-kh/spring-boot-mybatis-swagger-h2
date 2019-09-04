@@ -1,8 +1,8 @@
-package com.service.demo.services.impl;
+package com.service.springboot.services.impl;
 
-import com.service.demo.dao.PositionDAO;
-import com.service.demo.model.Position;
-import com.service.demo.services.IPositionService;
+import com.service.springboot.dao.PositionDAO;
+import com.service.springboot.model.Position;
+import com.service.springboot.services.IPositionService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
