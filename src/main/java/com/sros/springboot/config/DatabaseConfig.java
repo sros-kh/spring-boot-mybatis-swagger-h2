@@ -1,4 +1,4 @@
-package com.service.springboot.config;
+package com.sros.springboot.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.jdbc.DataSourceBuilder;

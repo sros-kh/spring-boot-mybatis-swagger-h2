@@ -1,7 +1,7 @@
-package com.service.springboot.dao;
+package com.sros.springboot.dao;
 
-import com.service.springboot.dao.provider.StaffProvider;
-import com.service.springboot.model.Staff;
+import com.sros.springboot.dao.provider.StaffProvider;
+import com.sros.springboot.model.Staff;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

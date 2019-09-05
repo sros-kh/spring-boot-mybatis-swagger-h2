@@ -1,7 +1,7 @@
-package com.service.springboot.controller;
+package com.sros.springboot.controller;
 
-import com.service.springboot.model.Position;
-import com.service.springboot.services.IPositionService;
+import com.sros.springboot.model.Position;
+import com.sros.springboot.services.IPositionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

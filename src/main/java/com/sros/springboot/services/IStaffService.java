@@ -1,6 +1,6 @@
-package com.service.springboot.services;
+package com.sros.springboot.services;
 
-import com.service.springboot.model.Staff;
+import com.sros.springboot.model.Staff;
 
 import java.util.List;
 

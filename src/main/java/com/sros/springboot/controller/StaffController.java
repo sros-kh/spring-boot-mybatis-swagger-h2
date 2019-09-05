@@ -1,8 +1,8 @@
-package com.service.springboot.controller;
+package com.sros.springboot.controller;
 
-import com.service.springboot.model.Staff;
-import com.service.springboot.services.IStaffService;
-import com.service.springboot.services.impl.StaffServiceImpl;
+import com.sros.springboot.model.Staff;
+import com.sros.springboot.services.IStaffService;
+import com.sros.springboot.services.impl.StaffServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

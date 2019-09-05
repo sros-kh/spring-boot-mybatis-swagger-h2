@@ -1,4 +1,4 @@
-package com.service.springboot;
+package com.sros.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

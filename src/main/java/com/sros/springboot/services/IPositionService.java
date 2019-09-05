@@ -1,6 +1,6 @@
-package com.service.springboot.services;
+package com.sros.springboot.services;
 
-import com.service.springboot.model.Position;
+import com.sros.springboot.model.Position;
 
 import java.util.List;
 
