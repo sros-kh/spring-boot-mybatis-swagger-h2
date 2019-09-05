@@ -1,14 +1,14 @@
-package com.sros.springboot.dao;
+package com.sros.springboot.model.dao;
 
-import com.sros.springboot.dao.provider.StaffProvider;
-import com.sros.springboot.model.Staff;
+import com.sros.springboot.model.dao.provider.StaffProvider;
+import com.sros.springboot.model.dto.Staff;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface StaffDAO {
+public interface StaffDao {
 
     @InsertProvider(type = StaffProvider.class, method = "create")
     void create(Staff staff);

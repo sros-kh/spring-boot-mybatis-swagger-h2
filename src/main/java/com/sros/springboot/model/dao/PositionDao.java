@@ -1,13 +1,13 @@
-package com.sros.springboot.dao;
+package com.sros.springboot.model.dao;
 
-import com.sros.springboot.model.Position;
+import com.sros.springboot.model.dto.Position;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface PositionDAO {
+public interface PositionDao {
 
     @Select("SELECT * FROM positions")
     List<Position> findAll();

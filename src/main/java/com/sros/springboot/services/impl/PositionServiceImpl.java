@@ -1,7 +1,7 @@
 package com.sros.springboot.services.impl;
 
-import com.sros.springboot.dao.PositionDAO;
-import com.sros.springboot.model.Position;
+import com.sros.springboot.model.dao.PositionDao;
+import com.sros.springboot.model.dto.Position;
 import com.sros.springboot.services.IPositionService;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +10,9 @@ import java.util.List;
 @Service
 public class PositionServiceImpl implements IPositionService {
 
-	private PositionDAO positionDao;
+	private PositionDao positionDao;
 
-	public PositionServiceImpl(PositionDAO positionDao) {
+	public PositionServiceImpl(PositionDao positionDao) {
 		this.positionDao = positionDao;
 	}
 

@@ -1,7 +1,7 @@
 package com.sros.springboot.services.impl;
 
-import com.sros.springboot.dao.StaffDAO;
-import com.sros.springboot.model.Staff;
+import com.sros.springboot.model.dao.StaffDao;
+import com.sros.springboot.model.dto.Staff;
 import com.sros.springboot.services.IStaffService;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +10,9 @@ import java.util.List;
 @Service
 public class StaffServiceImpl implements IStaffService {
 
-	private StaffDAO staffDao;
+	private StaffDao staffDao;
 
-	public StaffServiceImpl(StaffDAO staffDao) {
+	public StaffServiceImpl(StaffDao staffDao) {
 		this.staffDao = staffDao;
 	}
 

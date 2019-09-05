@@ -1,4 +1,4 @@
-package com.sros.springboot.model;
+package com.sros.springboot.model.dto;
 
 import java.util.Objects;
 
