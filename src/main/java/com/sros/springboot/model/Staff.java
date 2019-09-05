@@ -1,4 +1,4 @@
-package com.sros.springboot.model.dto;
+package com.sros.springboot.model;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

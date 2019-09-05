@@ -1,6 +1,6 @@
-package com.sros.springboot.model.dao;
+package com.sros.springboot.repos;
 
-import com.sros.springboot.model.dto.Position;
+import com.sros.springboot.model.Position;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

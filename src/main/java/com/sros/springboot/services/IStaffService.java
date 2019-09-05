@@ -1,6 +1,6 @@
 package com.sros.springboot.services;
 
-import com.sros.springboot.model.dto.Staff;
+import com.sros.springboot.model.Staff;
 
 import java.util.List;
 

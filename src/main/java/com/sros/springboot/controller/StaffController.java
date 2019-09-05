@@ -1,6 +1,6 @@
 package com.sros.springboot.controller;
 
-import com.sros.springboot.model.dto.Staff;
+import com.sros.springboot.model.Staff;
 import com.sros.springboot.services.IStaffService;
 import com.sros.springboot.services.impl.StaffServiceImpl;
 import org.springframework.http.HttpStatus;

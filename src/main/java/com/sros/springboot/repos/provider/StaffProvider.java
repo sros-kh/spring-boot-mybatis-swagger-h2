@@ -1,6 +1,6 @@
-package com.sros.springboot.model.dao.provider;
+package com.sros.springboot.repos.provider;
 
-import com.sros.springboot.model.dto.Staff;
+import com.sros.springboot.model.Staff;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
 

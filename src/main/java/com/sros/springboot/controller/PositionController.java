@@ -1,6 +1,6 @@
 package com.sros.springboot.controller;
 
-import com.sros.springboot.model.dto.Position;
+import com.sros.springboot.model.Position;
 import com.sros.springboot.services.IPositionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@MapperScan("com.sros.springboot.model.dao")
+@MapperScan("com.sros.springboot.repos")
 public class DatabaseConfig {
 
     @Bean
