@@ -1,7 +1,8 @@
 package com.sros.springboot.config;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -10,6 +11,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @MapperScan("com.sros.springboot.dao")
@@ -29,11 +31,15 @@ public class DatabaseConfig {
     @Primary
     @Profile("pgsql")
     public DataSource pgsqlDataSource() {
-        return DataSourceBuilder.create()
-                .url("jdbc:postgresql://13.229.17.66:5432/postgres")
-                .username("postgres")
-                .password("Sr0sPa$$w0rd2019")
-                .driverClassName("org.postgresql.Driver ")
-                .build();
+        return new HikariDataSource(new HikariConfig(properties()));
+    }
+
+    private Properties properties() {
+        Properties props = new Properties();
+        props.setProperty("dataSource.driverClassName", "org.postgresql.Driver");
+        props.setProperty("dataSource.user", "postgres");
+        props.setProperty("dataSource.password", "Sr0sPa$$w0rd2019");
+        props.setProperty("jdbcUrl", "jdbc:postgresql://13.229.17.66:5432/postgres");
+        return props;
     }
 }
