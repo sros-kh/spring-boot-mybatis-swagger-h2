@@ -8,7 +8,6 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.service.springboot.dao")
 public class DataSourceConfig {
     private DataSource dataSource;
 

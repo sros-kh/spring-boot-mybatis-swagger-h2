@@ -12,7 +12,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.service.springboot.dao")
+@MapperScan("com.sros.springboot.dao")
 public class DatabaseConfig {
 
     @Bean
