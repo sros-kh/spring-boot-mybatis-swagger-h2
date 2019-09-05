@@ -17,12 +17,12 @@ public class StaffController {
         this.staffService = staffService;
     }
 
-    @PostMapping("/find-all")
+    @GetMapping("/find-all")
     public ResponseEntity findAll(){
         return new ResponseEntity<>(this.staffService.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping("/find-one/{id}")
+    @GetMapping("/find-one/{id}")
     public ResponseEntity findOne(@PathVariable long id){
         return new ResponseEntity<>(this.staffService.findOne(id), HttpStatus.OK);
     }
@@ -32,7 +32,7 @@ public class StaffController {
         return new ResponseEntity<>(this.staffService.create(staff), HttpStatus.OK);
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity delete(@PathVariable long id){
         this.staffService.delete(id);
         return new ResponseEntity(HttpStatus.OK);

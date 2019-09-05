@@ -16,12 +16,12 @@ public class PositionController {
 		this.positionService = positionService;
 	}
 
-	@PostMapping("/find-one/{id}")
+	@GetMapping("/find-one/{id}")
 	public ResponseEntity findOne(@PathVariable long id) {
 		return new ResponseEntity<>(this.positionService.findOne(id), HttpStatus.OK);
 	}
 
-	@PostMapping("/find-all")
+	@GetMapping("/find-all")
 	public ResponseEntity findAll() {
 		return new ResponseEntity<>(this.positionService.findAll(), HttpStatus.OK);
 	}
@@ -31,7 +31,7 @@ public class PositionController {
 		return new ResponseEntity<>(this.positionService.create(position), HttpStatus.OK);
 	}
 
-	@PostMapping("/delete{id}")
+	@DeleteMapping("/delete{id}")
 	public ResponseEntity delete(@PathVariable long id) {
 		this.positionService.delete(id);
 		return new ResponseEntity(HttpStatus.OK);
