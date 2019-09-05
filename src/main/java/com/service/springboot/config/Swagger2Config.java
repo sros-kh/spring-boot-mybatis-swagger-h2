@@ -31,12 +31,12 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         List<VendorExtension> vendorExtensions = new ArrayList<>();
         return new ApiInfo(
-            "My REST API",
-            "Some custom description of API.",
+            "",
+            "",
             "API 0.1",
             "Terms of service",
-             new Contact("Sros Yort", "www.example.com", "myeaddress@company.com"),
-            "License of API", "API license URL",
+             new Contact("", "", ""),
+            "", "",
              vendorExtensions
         );
     }

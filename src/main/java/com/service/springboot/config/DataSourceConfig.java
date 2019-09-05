@@ -1,5 +1,6 @@
 package com.service.springboot.config;
 
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -12,13 +13,22 @@ import javax.sql.DataSource;
 public class DataSourceConfig {
     @Bean
     @Profile("h2")
-    public DataSource dataSourceH2 (){
-        EmbeddedDatabaseBuilder databaseBuilder = new EmbeddedDatabaseBuilder();
-        databaseBuilder.setType(EmbeddedDatabaseType.H2);
+    public DataSource h2DataSource() {
+        return new EmbeddedDatabaseBuilder()
+                .setType(EmbeddedDatabaseType.H2)
+                .addScripts("h2/schema.sql")
+                .addScripts("h2/data.sql")
+                .build();
+    }
 
-        databaseBuilder.addScripts("h2DB/schema.sql");
-        databaseBuilder.addScripts("h2DB/data.sql");
-
-        return databaseBuilder.build();
+    @Bean
+    @Profile("pgsql")
+    public DataSource pgsqlDataSource() {
+        return DataSourceBuilder.create()
+                .url("")
+                .username("")
+                .password("")
+                .driverClassName("")
+                .build();
     }
 }
