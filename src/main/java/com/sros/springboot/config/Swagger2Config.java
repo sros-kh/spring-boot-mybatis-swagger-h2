@@ -31,11 +31,11 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         List<VendorExtension> vendorExtensions = new ArrayList<>();
         return new ApiInfo(
-            "",
-            "",
-            "API 0.1",
+            "Spring-boot / Mybatis / Swagger-2 / h2-db",
+            "I LOVE YOU",
+            "v1",
             "Terms of service",
-             new Contact("", "", ""),
+             new Contact("Sros", "", "yortsros@gmail.com"),
             "", "",
              vendorExtensions
         );
