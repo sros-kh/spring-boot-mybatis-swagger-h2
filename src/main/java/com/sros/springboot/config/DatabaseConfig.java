@@ -38,8 +38,8 @@ public class DatabaseConfig {
         Properties props = new Properties();
         props.setProperty("dataSource.driverClassName", "org.postgresql.Driver");
         props.setProperty("dataSource.user", "postgres");
-        props.setProperty("dataSource.password", "Sr0sPa$$w0rd2019");
-        props.setProperty("jdbcUrl", "jdbc:postgresql://13.229.17.66:5432/postgres");
+        props.setProperty("dataSource.password", "Password");
+        props.setProperty("jdbcUrl", "jdbc:postgresql://localhost:5432/postgres");
         return props;
     }
 }
